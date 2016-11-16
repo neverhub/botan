@@ -244,7 +244,8 @@ BOTAN_DLL check_crl_online(const std::vector<std::shared_ptr<const X509_Certific
 * @param hostname if not empty, compared against the DNS name in end_certs[0]
 * @param usage if not set to UNSPECIFIED, compared against the key usage in end_certs[0]
 * @param validation_time what reference time to use for validation
-* @param ocsp_timeout timeoutput for OCSP operations, 0 disables OCSP check
+* @param ocsp_timeout timeout for OCSP operations, 0 disables OCSP check
+* @param ocsp_resp additional OCSP responses to consider (eg from peer)
 * @return result of the path validation
 */
 Path_Validation_Result BOTAN_DLL x509_path_validate(
@@ -254,7 +255,8 @@ Path_Validation_Result BOTAN_DLL x509_path_validate(
    const std::string& hostname = "",
    Usage_Type usage = Usage_Type::UNSPECIFIED,
    std::chrono::system_clock::time_point validation_time = std::chrono::system_clock::now(),
-   std::chrono::milliseconds ocsp_timeout = std::chrono::milliseconds(0));
+   std::chrono::milliseconds ocsp_timeout = std::chrono::milliseconds(0),
+   const std::vector<std::shared_ptr<const OCSP::Response>>& ocsp_resp = {});
 
 /**
 * PKIX Path Validation
@@ -265,6 +267,7 @@ Path_Validation_Result BOTAN_DLL x509_path_validate(
 * @param usage if not set to UNSPECIFIED, compared against the key usage in end_cert
 * @param validation_time what reference time to use for validation
 * @param ocsp_timeout timeoutput for OCSP operations, 0 disables OCSP check
+* @param ocsp_resp additional OCSP responses to consider (eg from peer)
 * @return result of the path validation
 */
 Path_Validation_Result BOTAN_DLL x509_path_validate(
@@ -274,7 +277,8 @@ Path_Validation_Result BOTAN_DLL x509_path_validate(
    const std::string& hostname = "",
    Usage_Type usage = Usage_Type::UNSPECIFIED,
    std::chrono::system_clock::time_point validation_time = std::chrono::system_clock::now(),
-   std::chrono::milliseconds ocsp_timeout = std::chrono::milliseconds(0));
+   std::chrono::milliseconds ocsp_timeout = std::chrono::milliseconds(0),
+   const std::vector<std::shared_ptr<const OCSP::Response>>& ocsp_resp = {});
 
 /**
 * PKIX Path Validation
@@ -285,6 +289,7 @@ Path_Validation_Result BOTAN_DLL x509_path_validate(
 * @param usage if not set to UNSPECIFIED, compared against the key usage in end_cert
 * @param validation_time what reference time to use for validation
 * @param ocsp_timeout timeoutput for OCSP operations, 0 disables OCSP check
+* @param ocsp_resp additional OCSP responses to consider (eg from peer)
 * @return result of the path validation
 */
 Path_Validation_Result BOTAN_DLL x509_path_validate(
@@ -294,7 +299,8 @@ Path_Validation_Result BOTAN_DLL x509_path_validate(
    const std::string& hostname = "",
    Usage_Type usage = Usage_Type::UNSPECIFIED,
    std::chrono::system_clock::time_point validation_time = std::chrono::system_clock::now(),
-   std::chrono::milliseconds ocsp_timeout = std::chrono::milliseconds(0));
+   std::chrono::milliseconds ocsp_timeout = std::chrono::milliseconds(0),
+   const std::vector<std::shared_ptr<const OCSP::Response>>& ocsp_resp = {});
 
 /**
 * PKIX Path Validation
@@ -305,6 +311,7 @@ Path_Validation_Result BOTAN_DLL x509_path_validate(
 * @param usage if not set to UNSPECIFIED, compared against the key usage in end_certs[0]
 * @param validation_time what reference time to use for validation
 * @param ocsp_timeout timeoutput for OCSP operations, 0 disables OCSP check
+* @param ocsp_resp additional OCSP responses to consider (eg from peer)
 * @return result of the path validation
 */
 Path_Validation_Result BOTAN_DLL x509_path_validate(
@@ -314,7 +321,8 @@ Path_Validation_Result BOTAN_DLL x509_path_validate(
    const std::string& hostname = "",
    Usage_Type usage = Usage_Type::UNSPECIFIED,
    std::chrono::system_clock::time_point validation_time = std::chrono::system_clock::now(),
-   std::chrono::milliseconds ocsp_timeout = std::chrono::milliseconds(0));
+   std::chrono::milliseconds ocsp_timeout = std::chrono::milliseconds(0),
+   const std::vector<std::shared_ptr<const OCSP::Response>>& ocsp_resp = {});
 
 }
 
